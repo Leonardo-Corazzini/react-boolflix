@@ -14,14 +14,14 @@ export default function Header() {
     async function search(e) {
         e.preventDefault()
         try {
-            const movieRes = await axios.get(`${BASE_URI}/search/movie${API_KEY}&query=${data}`)
+            const movieRes = await axios.get(`${BASE_URI}/3/search/movie${API_KEY}&query=${data}`)
             console.log(movieRes.data.results)
             setFilms(movieRes.data.results)
         } catch (err) {
             console.error(err)
         }
         try {
-            const seriesRes = await axios.get(`${BASE_URI}/search/tv${API_KEY}&query=${data}`)
+            const seriesRes = await axios.get(`${BASE_URI}/3/search/tv${API_KEY}&query=${data}`)
             console.log(seriesRes.data.results)
             setTvSeries(seriesRes.data.results)
         } catch (err) {

@@ -5,20 +5,22 @@ const language = {
     fr: 'icons8-francia-circolare-48.png',
     es: 'icons8-spagna-circolare-48.png'
 }
+import { IMAGE_URI } from "../../config"
 
 
 export default function Card({ search }) {
-    const { title, original_title, name, original_name, original_language, vote_count } = search
-
+    const { title, original_title, name, original_name, original_language, vote_average, poster_path } = search
+    const starVote = Math.round(vote_average / 2)
 
     return (
         <div>
             <div>
                 <ol>
                     <li>{title || name}</li>
+                    <li><img src={`${IMAGE_URI}${poster_path}`} alt="" /></li>
                     <li>{original_title || original_name}</li>
                     <li><img src={language[original_language]} alt="" /></li>
-                    <li>{vote_count}</li>
+                    <li>{starVote}</li>
                 </ol>
             </div>
         </div>

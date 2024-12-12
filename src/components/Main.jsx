@@ -1,24 +1,20 @@
+import Card from "./Card/Card"
 import { useContext } from "react";
 import GlobalContext from "../context/GlobalContext";
-const language = {
-    it: 'icons8-circolare-italia-48.png',
-    en: 'icons8-circolare-della-gran-bretagna-48.png',
-    de: 'icons8-circolare-tedesca-48.png',
-    fr: 'icons8-francia-circolare-48.png',
-    es: 'icons8-spagna-circolare-48.png'
-}
 
 
 export default function Main() {
-    const { films } = useContext(GlobalContext)
+    const { films, tvSeries } = useContext(GlobalContext)
     return (
-        films && films.map(({ id, title, original_title, original_language, vote_count }) => <div key={id}>
-            <ol>
-                <li>{title}</li>
-                <li>{original_title}</li>
-                <li><img src={language[original_language]} alt="" /></li>
-                <li>{vote_count}</li>
-            </ol>
-        </div>)
+        <main>
+            <section>
+                <h2>Film</h2>
+                {films && films.map(film => <Card key={film.id} search={film} />)}
+            </section>
+            <section>
+                <h2>Serie tv</h2>
+                {tvSeries && tvSeries.map(tvSerie => <Card key={tvSerie.id} search={tvSerie} />)}
+            </section>
+        </main>
     )
 }

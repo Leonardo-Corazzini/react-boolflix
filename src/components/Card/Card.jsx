@@ -14,7 +14,7 @@ import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons'
 
 
 export default function Card({ search }) {
-    const { title, original_title, name, original_name, original_language, vote_average, poster_path, vote_count } = search
+    const { title, original_title, name, original_name, original_language, vote_average, poster_path, vote_count, overview } = search
     const starVote = Math.round(vote_average / 2)
     const emptyVote = 5 - starVote
     function starArray(num1, num2) {
@@ -39,6 +39,7 @@ export default function Card({ search }) {
                 <div className={style.title} title={original_title || original_name}>{title || name}</div>
                 <div className={style.language}><img src={language[original_language]} alt="" />{language[original_language] ? '' : original_language}</div>
                 <div className={style.vote}>{starArray(starVote, emptyVote).map((star, i) => <span key={i}> <FontAwesomeIcon icon={star} /></span>)} ({vote_count})</div>
+                <p>{overview}</p>
 
             </div>
         </div >

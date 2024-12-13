@@ -1,6 +1,7 @@
 .card {
     border: 1px solid gray;
     position: relative;
+    transition: transform 1s;
 
 }
 
@@ -12,18 +13,24 @@
 .thumb img {
     width: 100%;
     display: block;
+    aspect-ratio: 2/3;
 }
 
 .description {
     display: none;
-    background-color: rgba(0, 0, 0, 0.836);
+    background-color: rgba(0, 0, 0, 0.925);
     padding: 1rem;
 
 }
 
 .card:hover {
+    /* animation: rotate 2s; */
+    transform: rotateY(-180deg);
+    border: 2px solid rgb(207, 203, 203);
+
     .description {
         display: block;
+        transform: rotateY(180deg);
         position: absolute;
         top: 0;
         left: 0;
@@ -33,16 +40,40 @@
 
 }
 
+.title {
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.language {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.language>* {
+    width: 2rem;
+}
+
+.vote {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
 /* @keyframes rotate {
 
     0%,
-    50%,
-    100% {
+    50% {
         transform: rotateY(45deg);
     }
 
     25%,
     75% {
         transform: rotateY(90deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
     }
 } */

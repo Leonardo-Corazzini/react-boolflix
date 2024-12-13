@@ -1,0 +1,48 @@
+.card {
+    border: 1px solid gray;
+    position: relative;
+
+}
+
+/* 
+.card :hover {
+    animation: rotate 2s;
+} */
+
+.thumb img {
+    width: 100%;
+    display: block;
+}
+
+.description {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.836);
+    padding: 1rem;
+
+}
+
+.card:hover {
+    .description {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+/* @keyframes rotate {
+
+    0%,
+    50%,
+    100% {
+        transform: rotateY(45deg);
+    }
+
+    25%,
+    75% {
+        transform: rotateY(90deg);
+    }
+} */

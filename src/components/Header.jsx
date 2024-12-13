@@ -32,9 +32,12 @@ export default function Header() {
     }
     return (
         <header>
-            <form onSubmit={search} action="">
-                <input type="text" onChange={(e) => setData(e.target.value)} name="name" value={data} placeholder="scrivi il nome del film" />
-                <input type="submit" value='cerca' />
+            <form className="navbar" onSubmit={search} >
+                <h1>Boolflix</h1>
+                <div>
+                    <input type="text" onChange={(e) => setData(e.target.value)} name="name" value={data} placeholder="scrivi il nome del film" />
+                    <input type="submit" value='cerca' />
+                </div>
             </form>
         </header>
     )

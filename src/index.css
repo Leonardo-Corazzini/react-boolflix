@@ -12,3 +12,64 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* reste rules */
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px
+}
+
+/* structure */
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  width: calc(100% / 12 * 3);
+  padding: 1rem;
+}
+
+/* style */
+/* header style */
+header {
+  background-color: black;
+  padding: 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 3rem;
+  color: red
+}
+
+.navbar input[type='text'] {
+  width: 18rem;
+  border: none;
+  padding: 4px;
+  margin: 10px;
+}
+
+.navbar input[type='submit'] {
+  width: 5rem;
+  border-radius: 2px;
+  color: white;
+  padding: 4px;
+  background-color: rgb(105, 104, 103);
+  cursor: pointer;
+}
+
+.navbar input[type='submit']:hover {
+  background-color: rgb(155, 152, 152);
+}

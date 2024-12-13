@@ -5,9 +5,13 @@ export default function Itemlist({ title, search }) {
     return (
         <section>
             <div className="container">
+                <h2>{search.length > 0 && title}</h2>
                 <div className="row">
-                    <h2>{search.length > 0 && title}</h2>
-                    {search.map(item => <Card key={item.id} search={item} />)}
+                    {search.map(item =>
+                        <div className="col" key={item.id}>
+                            <Card search={item} />
+                        </div>
+                    )}
                 </div>
             </div>
         </section>

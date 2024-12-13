@@ -6,12 +6,18 @@ const language = {
     es: 'icons8-spagna-circolare-48.png'
 }
 import { IMAGE_URI } from "../../config"
+// import ReactDOM from 'react-dom'
+// import { faStar } from '@fortawesome/free-solid-svg-icons'
+// import { faStar } from '@fortawesome/free-regular-svg-icons'
 
 
 export default function Card({ search }) {
     const { title, original_title, name, original_name, original_language, vote_average, poster_path } = search
     const starVote = Math.round(vote_average / 2)
+    function starCalculator(vote) {
 
+
+    }
     return (
         <div>
             <div>
